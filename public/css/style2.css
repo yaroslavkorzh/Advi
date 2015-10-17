@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+
+
+html, body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Tahoma;
+	color: #000;
+	background: #ccc;
+}
+
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+*{
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	margin: 2%;
+}
+
+.wrap{
+	position: relative;
+	width: 80%;
+	max-width: 960px;
+	margin: 5% auto;
+}
+
+.big, .s-block, .logo, .logo:before, .list, .m-top, .m-bottom, .w-image, .w-title, .m-image, .b-list, .ava, .t-block, .block{
+	background: #D8D4D4;
+}

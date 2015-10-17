@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  	<title>Anna's startup</title>
+    <meta name="description" content="Coolest startup ever" />
+    <meta name="author" content="Yaroslav Korzh" />
+    <meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="lib/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="lib/css/bigvideo.css">
+	<link rel="stylesheet" href="lib/css/bpopup.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/css/semantic.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+
+<script type="text/javascript" src="lib/js/jquery-1.11.3.min.js"></script>
+<!-- for video background -->
+<script type="text/javascript" src="lib/js/jquery-ui.min.js"></script>
+<script src="lib/js/video.js"></script>
+<script src="lib/js/imagesloaded.pkgd.min.js"></script>
+<script src="lib/js/bigvideo.js"></script>
+<!-- for video background -->
+<script src="lib/js/semantic.min.js"></script>
+<script src="lib/js/jquery.bpopup.min.js"></script>
+
+
+<script type="text/javascript" src="js/main.js"></script> 
+<script src="testfolder/test.js"></script>
+
+</head>
+
+
+
+<body>
+	<video width="320" height="240" class="hidden" autoplay>
+  		<source src="res/video/dock.mp4" type="video/mp4">
+  		<source src="res/video/river.mp4" type="video/mp4">
+  		<source src="res/video/frontier.mp4" type="video/mp4">
+	</video>
+	<div id="popup" class="popup">
+        <span class="button b-close"><span>X</span></span>
+        If you can't get it up use<br><span class="logo">bPopup</span>
+    </div>
+	<div class="main">
+		<div class="head-msg">
+			<div class="headline-main">Explore life easily!</div><br>
+			<div class="headline-runner">Rent stuff all over the world</div> 
+		</div>
+		<div>
+			<div class="container">
+		      <form id="sign-up" class="form-signin" >
+		        <p class="form-signin-heading">Leave us your email, we will catch you up soon</p>
+		        <!-- <div class="field">
+				    <input type="text" class="input-block-level" name="name" placeholder="Name">
+				    
+				</div> -->
+		        <div class="field">
+				    <input type="email" class="input-block-level" name="email" placeholder="Email address">
+				    
+				</div>
+				<div class="field">
+				    <input type="text" class="input-block-level" name="rentreq" placeholder="What would you like to rent?">				    
+				</div>
+				<div id="error-container" class="ui error message" style="display: none;"></div>
+		        <div class="submit-email">
+		        	<button id="submit-btn" class="ui orange submit button submit-email-btn" type="submit">Submit</button><!-- removed styles from button: btn btn-large btn-primary -->
+		        </div>		        
+		      </form>
+
+		    </div> <!-- /container -->
+		</div>
+		<div> 
+			
+		</div>
+	</div>
+
+</body>
+</html>
