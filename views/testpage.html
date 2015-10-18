@@ -7,13 +7,42 @@
     <meta name="description" content="Coolest startup ever" />
     <meta name="author" content="Yaroslav Korzh" />
     <meta name="viewport" content="width=device-width">
+    <style>
+      .logo {
+        left: 5px; 
+        position: absolute; 
+        top: 10px; 
+        opacity: 1; 
+        display: block;
+        height: 90px;
+        width: 90px;
+        z-index: 500;
+      }
+    </style>
+      <link rel="stylesheet" type="text/css" href="lib/css/semantic.min.css">
 
-    <!-- <script type="text/javascript" src="lib/js/jquery-1.11.3.min.js"></script> -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/js/jquery-1.11.3.min.js"></script>  
+    <script src="lib/js/semantic.min.js"></script>  
+    <script type="text/javascript" src="js/test.js"></script> 
 </head>
   <body>
+    <div>
+        <button class="ui green button" onclick="playPause()">Play/Pause</button> 
+        <button class="ui olive button" onclick="makeBig()">Big</button>
+        <button class="ui red button" onclick="makeSmall()">Small</button>
+        <button class="ui yellow button" onclick="makeNormal()">Normal</button>
+    </div>
+    <div>
+      <video id="testvideo" width="640" height="480">
+      <source src="http://vs.byrockstars.com/video/PSY_GANGNAM_STYLE_merged.mp4" type="video/mp4">
+    </div>
+
+
+    </video> 
+
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player"></div>
+
+    <!-- <div id="player"></div>
 
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
@@ -58,6 +87,6 @@
       function stopVideo() {
         player.stopVideo();
       }
-    </script>
+    </script> -->
   </body>
 </html>
