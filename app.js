@@ -1,3 +1,4 @@
+var config = require('./config.js');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -12,13 +13,7 @@ var mysql      = require('mysql');
 var bodyParser = require('body-parser');
 //var blueimp_file_upload = require('./node_modules/blueimp-file-upload-node/server.js');
 
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'admin',
-  password : 'admin',
-  database : 'test',
-  port: 3306
-});
+var connection = mysql.createConnection(config.database);
 
 var app = express();
 
@@ -74,7 +69,7 @@ app.use(bodyParser.urlencoded({
 app.get('/', function(req, res) {
     // res.sendfile(__dirname + '/index.html');
     // send the rendered view to the client
-    res.render('index.html');
+    res.render('landing.html');
 });
 app.get('/landing', function(req, res) {
     // res.sendfile(__dirname + '/index.html');
@@ -113,7 +108,7 @@ app.post('/users', function (req, res) {
 });
 
 // Begin listening
-app.listen(3000);
+app.listen(80);
 console.log("Express server listening on port %d in %s mode");
 
 // app.use('/', routes);
