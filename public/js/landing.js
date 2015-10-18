@@ -185,6 +185,46 @@ function initAPI(){
   });
 }
 
+// mediaId = m403 ; taskId = v772 ;
+
+function getTask(){
+  $('#test-btn').on('click', function(){ 
+    var request = new XMLHttpRequest();
+    var taskId = 'v142';
+    request.open('GET', 'http://kote.videogorillas.com:8042/api/1/videos/get/'+taskId);
+
+    request.onreadystatechange = function () {
+      if (this.readyState === 4) {
+        console.log('Status:', this.status);
+        console.log('Headers:', this.getAllResponseHeaders());
+        console.log('Body:', this.responseText);
+        var data = JSON.parse(this.responseText);
+        console.log(data);
+        for (i = 0, ii = data.resultUrls.length; i < ii; ++i) {
+          $.getScript( data.resultUrls[i], function( data, textStatus, jqxhr ) {
+            console.log( data ); // Data returned
+            console.log( textStatus ); // Success
+            console.log( jqxhr.status ); // 200
+            console.log( "Load was performed." );
+          });
+          $.ajax({
+            url: data.resultUrls[i],
+            dataType: "text",
+            success: function (data) {
+              console.log(data);
+
+              //$('#output').html(data.responseText);
+            }
+          });
+        }
+      };
+    };
+
+    request.send();
+
+  });
+}
+
 // $(document).on('click', function(e){ console.log(e.target);});
 
 $( document ).ready(function() {
@@ -192,7 +232,8 @@ $( document ).ready(function() {
     //initBackGround();
     initHelp();
     initForm();
-    initAPI();
+    //initAPI();
+    getTask();
 });
 
 
