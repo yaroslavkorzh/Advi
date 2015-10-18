@@ -115,14 +115,16 @@ app.post('/register', function(req, res){
        password: req.body.password
 
    };
-    console.log(user);
-    connection.query('insert into user ?', user, function(err, result){
+    connection.query('insert into users SET ?', user, function(err, result){
         if(err){
             console.log(error);
+        }else{
+            res.setHeader('Content-Type', 'application/json');
+            res.writeHead(200);
+            res.write(JSON.stringify({name: user.username, id: result.insertId}));
+            res.end();
         }
-        console.log('Last insert ID:', result.insertId);
     });
-
 });
 
 // Begin listening
