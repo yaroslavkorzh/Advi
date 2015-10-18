@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 connection.connect(function(err){
 if(!err) {
-    console.log("Database is connected ... \n\n");  
+    console.log("Database is connected ... \n\n");
 } else {
   if (err) {
     console.error('error connecting: ' + err.stack);
@@ -105,6 +105,24 @@ app.post('/users', function (req, res) {
       res.json({ msg: 'Preregistration added to database',  values: req.body});
     });
     console.log(query.sql);
+});
+
+app.post('/register', function(req, res){
+    console.log(req.body);
+   var user = {
+       username: req.body.name,
+       email: req.body.email,
+       password: req.body.password
+
+   };
+    console.log(user);
+    connection.query('insert into user ?', user, function(err, result){
+        if(err){
+            console.log(error);
+        }
+        console.log('Last insert ID:', result.insertId);
+    });
+
 });
 
 // Begin listening

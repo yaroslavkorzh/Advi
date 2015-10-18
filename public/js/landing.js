@@ -87,10 +87,10 @@ function initForm(){
       console.log( "Handler for .submit() called." );
       getLocation();
       console.log(this);
-      var $this = $(this)
+      var $this = $(this);
       var scope = $this;
       //var data = $this.serialize();
-      var url = "/users";//+ '?' + data;
+      var url = "/register";//+ '?' + data;
       var data = $this.serializeArray().reduce(function(obj, item) {
         obj[item.name] = item.value;
         return obj;
@@ -101,21 +101,21 @@ function initForm(){
 
       console.log(data);
 
-                // $.ajax({
-                //     url: url,
-                //     type: "POST",
-                //     contentType: "application/json",
-                //     data: JSON.stringify(data),
-                //     complete: function (data) {
-                //       console.log(data.responseText);
-                //       scope.trigger('reset');
-                //         //$('#output').html(data.responseText);
-                //     }
-                // });
+                 $.ajax({
+                     url: url,
+                     type: "POST",
+                     contentType: "application/json",
+                     data: JSON.stringify(data),
+                     complete: function (data) {
+                       console.log(data.responseText);
+                       scope.trigger('reset');
+                         //$('#output').html(data.responseText);
+                     }
+                 });
         
     });
     
-    // $('#submit-btn').on('click', function(){ console.log(this);});
+     $('#submit-btn').on('click', function(){ console.log(this);});
 
     $('#register-btn').on('click', function(){ 
       $('.sign-up-form').removeClass('hidden');
@@ -166,21 +166,21 @@ function initAPI(){
     };
     request.send(JSON.stringify(body));
 
-    // $.ajax({
-    //   url: 'http://kote.videogorillas.com:8042/api/1/media',
-    //   type: "POST",
-    //   contentType: "application/json",
-    //   data: JSON.stringify(data),
-    //   beforeSend: function(){
-    //     // Handle the beforeSend event
-
-    //   },
-    //   complete: function (data) {
-    //     console.log(data.responseText);
-    //     scope.trigger('reset');
-    //     //$('#output').html(data.responseText);
-    //   }
-    // });
+     //$.ajax({
+     //  url: 'http://kote.videogorillas.com:8042/api/1/media',
+     //  type: "POST",
+     //  contentType: "application/json",
+     //  data: JSON.stringify(data),
+     //  beforeSend: function(){
+     //    // Handle the beforeSend event
+     //
+     //  },
+     //  complete: function (data) {
+     //    console.log(data.responseText);
+     //    scope.trigger('reset');
+     //    //$('#output').html(data.responseText);
+     //  }
+     //});
 
   });
 }
